@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Automatic Billing</title>
+
+    <link rel="stylesheet" href="asset/css/style.css">
+
+    <script src="asset/scripts/script.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</head>
+
+
+<body>
+    <!--Animation-->
+    <div class="lottie" id="1">
+        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_jioazy9u.json" background="transparent" speed="1" loop autoplay></lottie-player>
+        <div class="text">PLACE ITEMS TO START CHECKOUT</div>
+    </div>
+
+    <!--Main-->
+    <main id="home">
+
+    </main>
+
+    <!--Checkout Button-->
+    <div id="final">
+        <button id="2" class="checkout" onclick="checkout()">CHECKOUT</button>
+    </div>
+
+    <!--QR code-->
+    <div id="qr" class="animated fadeInUp Once">
+        Scan QR Code To Pay
+        <img id="image" src="" />
+    </div>
+
+
+
+    <!--API data update listener-->
+    <script>
+        window.onload = () => {
+            setInterval(function() {
+                loadProducts();
+            }, 100);
+        }
+    </script>
+
+
+</body>
+
+
+</html>

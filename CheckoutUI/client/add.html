@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create New Product</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <hr>
+        <h1>Create New Product</h1>
+        <hr>
+        <form action="https://automaticbilling.herokuapp.com/product" method="POST">
+            <div class="form-group">
+                <label for="exampleInputPassword1">ID</label>
+                <input class="form-control" name="id">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Name</label>
+                <input class="form-control" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Price</label>
+                <input type="number" class="form-control" name="price">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Unit</label>
+                <input class="form-control" name="unit">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Unit Taken</label>
+                <input type="number" class="form-control" name="taken">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Payable</label>
+                <input type="number" class="form-control" name="payable">
+            </div>
+
+            <button type="submit" class="btn btn-primary" onsubmit="back()">Submit</button>
+        </form>
+
+    </div>
+</body>
+<script>
+    function back() {
+        window.location.href = 'https://assettracker.cf/checkout/addBook.html';
+    }
+</script>
+
+</html>
