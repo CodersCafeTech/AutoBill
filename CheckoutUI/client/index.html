@@ -12,7 +12,7 @@
     <script src="asset/scripts/script.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 
@@ -33,11 +33,17 @@
         <button id="2" class="checkout" onclick="checkout()">CHECKOUT</button>
     </div>
 
+
     <!--QR code-->
     <div id="qr" class="animated fadeInUp Once">
         Scan QR Code To Pay
         <img id="image" src="" />
     </div>
+
+    <!--Success-->
+    <div id="success">
+        <lottie-player src="https://assets7.lottiefiles.com/private_files/lf30_poez9ped.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;" loop autoplay></lottie-player>
+          </div>
 
 
 
