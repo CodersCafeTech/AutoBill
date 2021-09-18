@@ -219,17 +219,22 @@ main {
     border-radius: 50px;
     text-align: center;
     font-weight: 800;
-    color: #fff;
-    text-align: center;
+    color: #ffffff;
     background: #02c8db;
     box-shadow: 3px 3px 8px #b1b1b1, -3px -3px 8px #fff;
     cursor: pointer;
-    width: 150%;
+    width: 220px;
+    height: 60px;
 }
 
 .checkout:hover {
     box-shadow: 8px 8px 13px #b1b1b1, -8px -8px 13px #fff;
     transition: 0.3s;
+}
+
+.final {
+    align-items: center;
+    color: rgba(255, 255, 255, .8);
 }
 
 #image {
@@ -255,6 +260,13 @@ main {
     position: absolute;
 }
 
+#success{
+    display: none;
+    font-size: inherit;
+    text-align: center;
+    font-weight: 500;
+    position: absolute;
+}
 @keyframes ripple-animation {
     from {
         transform: scale(1);
@@ -301,4 +313,88 @@ main {
     opacity: 0;
     animation-name: fadeInUp;
     -webkit-animation-name: fadeInUp;
+}
+
+[class*="loader-"] {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    color: inherit;
+    vertical-align: middle;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 1.0);
+}
+
+.loader-16 {
+    transform: rotateZ(45deg);
+    perspective: 1000px;
+    border-radius: 50%;
+}
+
+.loader-16:before,
+.loader-16:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+    animation: 1s spin linear infinite;
+}
+
+.loader-16:before {
+    transform: rotateX(70deg);
+}
+
+.loader-16:after {
+    transform: rotateY(70deg);
+    animation-delay: 0.4s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotateZ(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateZ(360deg);
+    }
+}
+
+@keyframes rotateccw {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+@keyframes spin {
+    0%,
+    100% {
+        box-shadow: 0.2em 0px 0 0px currentcolor;
+    }
+    12% {
+        box-shadow: 0.2em 0.2em 0 0 currentcolor;
+    }
+    25% {
+        box-shadow: 0 0.2em 0 0px currentcolor;
+    }
+    37% {
+        box-shadow: -0.2em 0.2em 0 0 currentcolor;
+    }
+    50% {
+        box-shadow: -0.2em 0 0 0 currentcolor;
+    }
+    62% {
+        box-shadow: -0.2em -0.2em 0 0 currentcolor;
+    }
+    75% {
+        box-shadow: 0px -0.2em 0 0 currentcolor;
+    }
+    87% {
+        box-shadow: 0.2em -0.2em 0 0 currentcolor;
+    }
 }
