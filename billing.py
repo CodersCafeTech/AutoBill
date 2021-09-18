@@ -95,7 +95,7 @@ def post(label,price,final_rate,taken):
     url = "https://automaticbilling.herokuapp.com/product"
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
-    data_dict = {"id":id_product,"name":label,"price":price,"unit":"Kg","taken":"1","payable":final_rate}
+    data_dict = {"id":id_product,"name":label,"price":price,"units":units,"taken":taken,"payable":final_rate}
     data = json.dumps(data_dict)
     resp = requests.post(url, headers=headers, data=data)
     print(resp.status_code)
@@ -129,16 +129,17 @@ def rate(final_weight,label,taken):
          print("Calculating rate of",label)
          final_rate_b = final_weight * 0.02
          price = 20
-         post(label,price,final_rate_b)
+         post(label,price,final_rate_b,taken)
     elif label == l:
          print("Calculating rate of",label)
-         final_rate_l = 10
-         return final_rate
+         final_rate_l = 1
+	 price = 1
+         post(label,price,final_rate_l,taken)
     else :
          print("Calculating rate of",label)
-         final_rate_c = final_weight * 0.02
-         return final_rate
-
+         final_rate_c = 2
+	 price = 2
+         post(label,price,final_rate_c,taken)
 def main(argv):
     global flag
     global final_weight
