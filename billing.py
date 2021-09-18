@@ -21,6 +21,7 @@ c_value = 0
 flag = 0
 ratio = -1363.992
 
+global id_product = 1
 list_label = []
 list_weight = []
 count = 0
@@ -91,15 +92,20 @@ def find_weight():
                
 def post(label,price,final_rate,taken):
     global id
-    id_product = 1
     url = "https://automaticbilling.herokuapp.com/product"
     headers = CaseInsensitiveDict()
     headers["Content-Type"] = "application/json"
-    data_dict = {"id":id_product,"name":label,"price":price,"units":units,"taken":taken,"payable":final_rate}
+    data_dict = {"id":id_product,"name":label,"price":price,"units":"units","taken":taken,"payable":final_rate}
     data = json.dumps(data_dict)
     resp = requests.post(url, headers=headers, data=data)
     print(resp.status_code)
+    id_product = id_product + 1  
     time.sleep(1)
+    list_label = []
+    list_weight = []
+    count = 0
+    final_weight = 0
+    taken = 0
                 
 def list_com(label,final_weight):
     global count
@@ -209,12 +215,10 @@ def main(argv):
                             final_weight = find_weight()
                             list_com(label,final_weight)
                             if label == a:
-                                print('Apple detected')   
-                                #final_weight = find_weight()     
+                                print('Apple detected')       
                             elif label == b:
                                 print('Banana detected')
                             elif label == l:
-                                #final_weight = find_weight()
                                 print('Lays deteccted')
                             else :
                                 print('Coke detected')
