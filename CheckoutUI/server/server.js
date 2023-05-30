@@ -4,7 +4,6 @@ const cors = require('cors');
 
 const app = express()
 var port = process.env.PORT || 3000;
-var db = require('./db');
 
 let products = [];
 let orders = [];
@@ -12,6 +11,10 @@ app.use(cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+    res.send("API deployment successful");
+});
 
 app.post('/product', (req, res) => {
     const product = req.body;
