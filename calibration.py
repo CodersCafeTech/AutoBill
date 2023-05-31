@@ -51,9 +51,7 @@ try:
     # subtracted by offset and converted by scale ratio to
     # desired units. In my case in grams.
     input('Press Enter to show reading')
-    print('Current weight on the scale in grams is: ')
-    
-    print('210.45708403716216 g')
+    print('Current weight on the scale in grams is: ',reading)
 
 except (KeyboardInterrupt, SystemExit):
     print('Bye :)')
